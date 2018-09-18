@@ -1,0 +1,2123 @@
+
+***********************************
+nips_expt3
+***********************************
+  task_args = {
+    mid = ["quadratic_psd"]
+
+    lam = [0],
+
+    data_path = ["/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"],
+
+    data_train = ["%vars.data_prefix%_train_frac_0.01.mat",
+                  "%vars.data_prefix%_train_frac_0.05.mat",
+                  "%vars.data_prefix%_train_frac_0.10.mat",
+                  "%vars.data_prefix%_train_frac_0.30.mat",
+                  "%vars.data_prefix%_train_frac_0.60.mat",
+                  "%vars.data_prefix%_train_frac_0.80.mat",
+                  "%vars.data_prefix%_train_frac_1.00.mat",
+                  ],
+    data_test = ["%vars.data_prefix%_test.mat"],
+
+    save_suff = ["%vars.save_suffix%_frac_0.01",
+                 "%vars.save_suffix%_frac_0.05",
+                 "%vars.save_suffix%_frac_0.10",
+                 "%vars.save_suffix%_frac_0.30",
+                 "%vars.save_suffix%_frac_0.60",
+                 "%vars.save_suffix%_frac_0.80",
+                 "%vars.save_suffix%_frac_1.00"],
+
+    layers = [''],
+
+    triplet = ["a"],
+ }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"'],
+
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suffix = ["%vars.save_suffix%"],
+
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+               }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+metrics_pc2017_04_25_1_c13b
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"',
+           '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"',
+           '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"'],
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"'],
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0],
+           //0, 1, 0, 1, 0, 1,
+           //0, 1, 0, 1, 0, 1],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts"'],
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"10, 3"',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"']
+
+    triplet = ['"a"']
+               //'"b"', '"b"', '"b"', '"b"', '"b"', '"b"',
+               //'"mix"', '"mix"', '"mix"', '"mix"', '"mix"', '"mix"']
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+nips_expt2
+***********************************
+  task_args = {
+    mid = ["quadratic_psd"]
+
+    lam = [0],
+
+    data_path = ["/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"],
+
+    data_train = ["%vars.data_prefix%_train_frac_0.01.mat",
+                  "%vars.data_prefix%_train_frac_0.05.mat",
+                  "%vars.data_prefix%_train_frac_0.10.mat",
+                  "%vars.data_prefix%_train_frac_0.30.mat",
+                  "%vars.data_prefix%_train_frac_0.60.mat",
+                  "%vars.data_prefix%_train_frac_0.80.mat",
+                  "%vars.data_prefix%_train_frac_1.00.mat",
+                  ],
+    data_test = ["%vars.data_prefix%_test.mat"],
+
+    save_suff = ["%vars.save_suffix%_frac_0.01",
+                 "%vars.save_suffix%_frac_0.05",
+                 "%vars.save_suffix%_frac_0.10",
+                 "%vars.save_suffix%_frac_0.30",
+                 "%vars.save_suffix%_frac_0.60",
+                 "%vars.save_suffix%_frac_0.80",
+                 "%vars.save_suffix%_frac_1.00"],
+
+    layers = [''],
+
+    triplet = ["a"],
+ }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"'],
+
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suffix = ["%vars.save_suffix%"],
+
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+               }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+metrics_prosthesis_many_retina
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"',
+          '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/datasets/"'],
+
+    data_train = ['"2005-08-03-0.mat_train_grp2.mat"', '"2015-09-23-7.mat_train_grp2.mat"',
+                  '"2016-01-05-0.mat_train_grp2.mat"', '"2017-03-15-1.mat_train_grp2.mat"',
+                  '"2005-08-03-0.mat_train_grp2.mat"', '"2015-09-23-7.mat_train_grp2.mat"',
+                  '"2016-01-05-0.mat_train_grp2.mat"', '"2017-03-15-1.mat_train_grp2.mat"'],
+
+    data_test = ['"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"',
+                  '"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"'],
+    // while training
+    //batch_size_test = [100],
+
+    // in eval
+    batch_size_test = [2000]
+    save_suff = ['"_2005-08-03-0_right"', '"_2015-09-23-7_right"',
+                 '"_2016-01-05-0_right"', '"_2017-03-15-1_right"',
+                 '"_2005-08-03-0_right"', '"_2015-09-23-7_right"',
+                 '"_2016-01-05-0_right"', '"_2017-03-15-1_right"'],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.1],
+    layers = ['"50, 5, 5, 50, 5, 5"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+//   task_args = {
+//     mid = ['"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"',
+//           '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"',]
+//
+//     data_path = ['"/home/bhaishahster/metric_learning/datasets"'],
+//
+//     data_train = ['"2005-08-03-0.mat_train_grp1.mat"', '"2015-09-23-7.mat_train_grp1.mat"',
+//                   '"2016-01-05-0.mat_train_grp1.mat"', '"2017-03-15-1.mat_train_grp1.mat"',
+//                   '"2005-08-03-0.mat_train_grp1.mat"', '"2015-09-23-7.mat_train_grp1.mat"',
+//                   '"2016-01-05-0.mat_train_grp1.mat"', '"2017-03-15-1.mat_train_grp1.mat"'],
+//
+//     // use in training
+//     data_test = ['"2005-08-03-0.mat_test_grp1.mat"', '"2015-09-23-7.mat_test_grp1.mat"',
+//                  '"2016-01-05-0.mat_test_grp1.mat"', '"2017-03-15-1.mat_test_grp1.mat"',
+//                   '"2005-08-03-0.mat_test_grp1.mat"', '"2015-09-23-7.mat_test_grp1.mat"',
+//                   '"2016-01-05-0.mat_test_grp1.mat"', '"2017-03-15-1.mat_test_grp1.mat"'],
+//     batch_size_test = [100],
+//
+//     // use in eval
+//     //data_test = ['"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+//     //              '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"',
+//     //             '"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+//     //             '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"'],
+//     //batch_size_test = [2000],
+//
+//     save_suff = ['"_2005-08-03-0_left_right"', '"_2015-09-23-7_left_right"',
+//                  '"_2016-01-05-0_left_right"', '"_2017-03-15-1_left_right"',
+//                  '"_2005-08-03-0_left_right"', '"_2015-09-23-7_left_right"',
+//                  '"_2016-01-05-0_left_right"', '"_2017-03-15-1_left_right"'],
+//
+//     triplet = ['"batch"'],
+//     beta = [10]
+//     grid_res = [1],
+//     layers = ['"5, 5, 5, 5, 5, 5"', '"5, 5, 5, 5, 5, 5"', '"5, 5, 5, 5, 5, 5"', '"5, 5, 5, 5, 5, 5"',
+//               '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"'], // before, did 10, 5, 2
+//     batch_size_train = [100],
+//
+//     lam = [0],
+//     batch_norm = ['"True"'],
+//     learning_rate = [0.01]
+//      }
+
+***********************************
+fit_response_quadratic_pc2017_04_25_1
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    save_suff = ['"_pc2017_04_25_1"'],
+    data_train = ['"data012_lr.mat"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_pc2017_04_25_1_conv
+***********************************
+  task_args = {
+    mid = ['"conv"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_remove_dups_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_remove_dups_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_all_cells_np_dups"'],
+
+    triplet = ['"a"'],
+    grid_res = [0.5],
+    layers = ['"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',
+              '"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',
+              '"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',
+              '"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',
+              '"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',
+              '"10, 5, 5"', '"10, 7, 6"', '"10, 7, 6, 10, 7, 6"',],
+    batch_size_train = [100],
+    lam = [0, 0, 0,
+           0.1, 0.1, 0.1,
+           1, 1, 1,
+           0, 0, 0,
+           0.1, 0.1, 0.1,
+           1, 1, 1,],
+    batch_norm = ['"False"', '"False"', '"False"',
+                  '"False"', '"False"', '"False"',
+                  '"False"', '"False"', '"False"',
+                  '"True"', '"True"', '"True"',
+                  '"True"', '"True"', '"True"',
+                  '"True"', '"True"', '"True"'],
+     }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_prosthesis_many_retina2
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/datasets/"'],
+
+    data_train = ['"2015-09-23-7.mat_train_grp2.mat"',
+                  '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp2.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"',
+                   '"2015-09-23-7.mat_train_grp1.mat"'],
+    batch_size_train = [10],
+
+    // Change to ALL to grp_2 for every thing for testing!
+    // data_test = ['"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp2.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"',
+    //               '"2015-09-23-7.mat_test_grp1.mat"'],
+
+        data_test = ['"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"',
+                  '"2015-09-23-7.mat_test_grp2.mat"'],
+
+    batch_size_test = [10000],
+    save_suff = ['"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+                  '"_2015-09-23-7_right_p_new"',
+
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  '"_2015-09-23-7_left_right_p_new"',
+                  ]
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [1],
+    layers = ['"5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 2, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2"',
+              '"5, 14, 2, 5, 14, 2"',
+              '"5, 28, 2, 5, 28, 2"',
+              '"5, 56, 2, 5, 56, 2"',
+              '"5, 112, 2, 5, 112, 2"',
+              '"5, 224, 2, 5, 224, 2"',
+              '"5, 448, 2, 5, 448, 2"',
+              '"5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 2, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2"',
+              '"5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2, 5, 7, 2"',
+              '"5, 14, 2, 5, 14, 2"',
+              '"5, 28, 2, 5, 28, 2"',
+              '"5, 56, 2, 5, 56, 2"',
+              '"5, 112, 2, 5, 112, 2"',
+              '"5, 224, 2, 5, 224, 2"',
+              '"5, 448, 2, 5, 448, 2"'], // before, did 10, 5, 2
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.001]
+     }
+
+binary = metric_eval.par
+
+
+
+//   task_args = {
+//     mid = ['"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"',
+//           '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"', '"conv_prosthesis"',]
+//
+//     data_path = ['"/home/bhaishahster/metric_learning/datasets"'],
+//
+//     data_train = ['"2005-08-03-0.mat_train_grp1.mat"', '"2015-09-23-7.mat_train_grp1.mat"',
+//                   '"2016-01-05-0.mat_train_grp1.mat"', '"2017-03-15-1.mat_train_grp1.mat"',
+//                   '"2005-08-03-0.mat_train_grp1.mat"', '"2015-09-23-7.mat_train_grp1.mat"',
+//                   '"2016-01-05-0.mat_train_grp1.mat"', '"2017-03-15-1.mat_train_grp1.mat"'],
+//
+//     // use in training
+//     data_test = ['"2005-08-03-0.mat_test_grp1.mat"', '"2015-09-23-7.mat_test_grp1.mat"',
+//                  '"2016-01-05-0.mat_test_grp1.mat"', '"2017-03-15-1.mat_test_grp1.mat"',
+//                   '"2005-08-03-0.mat_test_grp1.mat"', '"2015-09-23-7.mat_test_grp1.mat"',
+//                   '"2016-01-05-0.mat_test_grp1.mat"', '"2017-03-15-1.mat_test_grp1.mat"'],
+//     batch_size_test = [100],
+//
+//     // use in eval
+//     //data_test = ['"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+//     //              '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"',
+//     //             '"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+//     //              '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"'],
+//     //batch_size_test = [2000],
+//
+//     save_suff = ['"_2005-08-03-0_left_right"', '"_2015-09-23-7_left_right"',
+//                  '"_2016-01-05-0_left_right"', '"_2017-03-15-1_left_right"',
+//                  '"_2005-08-03-0_left_right"', '"_2015-09-23-7_left_right"',
+//                  '"_2016-01-05-0_left_right"', '"_2017-03-15-1_left_right"'],
+//
+//     triplet = ['"batch"'],
+//     beta = [10]
+//     grid_res = [0.1],
+//     layers = ['"50, 5, 5, 50, 5, 5"', '"50, 5, 5, 50, 5, 5"', '"50, 5, 5, 50, 5, 5"', '"50, 5, 5, 50, 5, 5"',
+//               '"50, 5, 5"', '"50, 5, 5"', '"50, 5, 5"', '"50, 5, 5"'], // before, did 10, 5, 2
+//     batch_size_train = [100],
+//
+//     lam = [0],
+//     batch_norm = ['"True"'],
+//     learning_rate = [0.01]
+//      }
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/datasets/"'],
+
+    data_train = [
+                  '"2005-08-03-0.mat_train_grp2.mat"', '"2015-09-23-7.mat_train_grp2.mat"',
+                  '"2016-01-05-0.mat_train_grp2.mat"', '"2017-03-15-1.mat_train_grp2.mat"'],
+
+    data_test = ['"2005-08-03-0.mat_test_grp2.mat"', '"2015-09-23-7.mat_test_grp2.mat"',
+                 '"2016-01-05-0.mat_test_grp2.mat"', '"2017-03-15-1.mat_test_grp2.mat"'],
+    batch_size_test = [100],
+
+    save_suff = ['"_2005-08-03-0_right_q"', '"_2015-09-23-7_right_q"',
+                 '"_2016-01-05-0_right_q"', '"_2017-03-15-1_right_q"'],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    batch_size_train = [100],
+
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_pc2005_08_03_0_dec15
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["'data005_train_grp1_100reps.mat'"],
+    data_test = ["'data005_test_grp2_100reps.mat'"],
+    save_suff = ["'_2005_08_03_0_100reps_grp1_dec15'"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["'data005_train_grp1_100reps.mat'"],
+    data_test = ["'data005_test_grp1_100reps.mat'"],
+    save_suff = ["'_2005_08_03_0_100reps_grp1_dec15'"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["'data005_train_grp1_100reps.mat'"],
+    data_test = ["'data005_test_grp1_100reps.mat'"],
+    save_suff = ["'_2005_08_03_0_100reps_grp1_dec15'"],
+
+
+    triplet = ['"batch"'],
+    beta = [10]
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0, 0.01, 0.1, 1],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["'data005_train_grp2_100reps.mat'"],
+    data_test = ["'data005_test_grp2_100reps.mat'"],
+    save_suff = ["'_2005_08_03_0_100reps_grp2_dec15'"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["'data005_train_grp2_100reps.mat'"],
+    data_test = ["'data005_test_grp2_100reps.mat'"],
+    save_suff = ["'_2005_08_03_0_100reps_grp2_dec15'"],
+
+
+    triplet = ['"batch"'],
+    beta = [10]
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0, 0.01, 0.1, 1],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+metrics_pc2005_08_03_0_oct21
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0, 0.01, 0.1, 1],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_quadratic_mining_hard_examples
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_long_wn_2rep_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"a"'],
+    save_suffix = ["_hard_examples_ALL"]
+ }
+
+binary = metric_learn_hard_examples.par
+
+
+
+
+***********************************
+fit_metrics_tripletb
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100],
+    train_data = ['"example_wn_30reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_mrf_mining_few_cells
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF.mat"'],
+    triplet_type = ['"mix"'],
+    suffix = ['"_wn_30reps_ON_OFF"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+neg_batch_nips_1
+***********************************
+  task_args = {
+
+    mid = ['"mlnn_logistic_neg_batch"'],
+
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    layers = ['"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"',
+              '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"',
+              '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"',
+              '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"',
+              '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"',
+              '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"',
+              '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"'],
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0],
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+q_psd_pc2017_04_25_1_c15b_train_expts_local_metric2
+***********************************
+  task_args = {
+
+    mid = ['"mlnn_logistic_neg_batch"'],
+
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_local_struct"'],
+    //layers = ['"10, 10"', '"5, 5"', '"10, 5"',
+    //          '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+    //          '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"']
+
+    layers = ['"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"',
+              '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"',
+              '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"',
+              '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"',
+              '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"',
+              '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"',
+              '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"'],
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_quadratc_pc2017_04_25_1_cells_15_groupb
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 0, 0.001, 0.01, 0.1, 1, 10],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    data_train = ['"data012_lr_15_cells_groupb.mat"'],
+    save_suff = ['"_2017_04_25_1_cells_15_groupb"'],
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"', '"b"', '"b"', '"b"', '"b"', '"b"', '"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_mrf_pc2017_04_25_1_cells_15_groupb_training
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 0, 0.001, 0.01, 0.1, 1, 10],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    data_train = ['"data012_lr_15_cells_groupb_with_stimulus_train.mat"'],
+    save_suff = ['"_2017_04_25_1_cells_15_groupb_train"'],
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"', '"b"', '"b"', '"b"', '"b"', '"b"', '"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_pc2017_04_25_1_conv_prosthesis
+***********************************
+//   task_args = {
+//     mid = ['"conv_prosthesis"']
+//
+//     data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+//
+//     data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp1.mat"'],
+//     data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp1.mat"'],
+//
+//     //data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp2.mat"'],
+//     //data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp2.mat"'],
+//
+//     save_suff = ['"_2017_04_25_1_all_cells_np_dups_grp1_relu"'],
+//
+//     triplet = ['"a"'],
+//     grid_res = [0.5],
+//     layers = ['"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+//               '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+//               '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+//               '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"'],
+//     batch_size_train = [10000],
+//     lam = [0, 0, 0,
+//            1, 1, 1,
+//            0, 0, 0,
+//            1, 1, 1,],
+//     batch_norm = ['"False"', '"False"', '"False"',
+//                   '"False"', '"False"', '"False"',
+//                   '"True"', '"True"', '"True"',
+//                   '"True"', '"True"', '"True"'],
+//      }
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp1.mat"'],
+    //data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp1.mat"'],
+
+    //data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp2.mat"'],
+    data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp2.mat"'],
+
+    save_suff = ['"_2017_04_25_1_all_cells_np_dups_grp1_relu"'],
+
+    triplet = ['"batch"'],
+    beta = [10, 50, 100, 1, 5, 0.1, 0.01, 0.001, 1000]
+    grid_res = [0.5],
+    layers = ['"10, 5, 2, 10, 5, 2"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+//   task_args = {
+//     mid = ['"quadratic_psd_neg_batch"']
+//
+//     data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+//
+//     //data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp1.mat"'],
+//     //data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp1.mat"'],
+//
+//     data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp2.mat"'],
+//     data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp2.mat"'],
+//
+//     save_suff = ['"_2017_04_25_1_all_cells_np_dups_grp2"'],
+//
+//     triplet = ['"batch"'],
+//     beta = [10, 50, 100, 1, 5, 0.1, 0.01, 0.001, 1000,
+//     10, 50, 100, 1, 5, 0.1, 0.01, 0.001, 1000]
+//     batch_size_train = [100],
+//     batch_size_test = [10000],
+//     lam = [0, 0, 0, 0, 0, 0, 0, 0, 0,
+//           0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+//     learning_rate = [0.01]
+//      }
+
+***********************************
+metrics_pc2017_04_25_1_c13b_batch_conv
+***********************************
+  task_args = {
+    save_folder = ['"/home/bhaishahster/metric_learn_oct_3/"'],
+    mid = ['"conv_prosthesis"'],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"10, 5, 2, 10, 5, 2"', '"10, 5, 2"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+    max_iter = [40000]
+
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_quadratic_mining_few_cells
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF.mat"'],
+    triplet_type = ['"mix"'],
+    suffix = ['"_wn_30reps_ON_OFF"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+neg_batch_nips_more_cells_time_bins
+***********************************
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"', '"quadratic_psd_neg_batch"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           "'quadratic_constrained'"],
+
+    lam = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+           0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+           0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25,
+           0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05,
+           0.01, 0.01, 0.01,
+           0.005, 0.005, 0.005,
+           0],
+
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001, 0, 0, 0,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001, 0, 0, 0,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001, 0, 0, 0,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001, 0, 0, 0,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001, 0, 0, 0,
+            0, 0, 0,
+            0, 0, 0,
+            0],
+    triplet = ['"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"',
+               '"a"', '"a"', '"a"',
+               '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"',
+               '"a"', '"a"', '"a"',
+               '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"',
+               '"a"', '"a"', '"a"',
+               '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"',
+               '"a"', '"a"', '"a"',
+               '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"', '"batch"',
+               '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"',
+               '"a"'],
+    max_iter = [20000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_pc2017_04_25_1_c13b_batch
+***********************************
+  task_args = {
+    save_folder = ['"/home/bhaishahster/metric_learn_oct_3/"'],
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0, 1, 0.5, 0.1, 0.75],
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [10],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_quadratic_mining
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"mix"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+neg_batch_nips_2
+***********************************
+  task_args = {
+
+    mid = ['"mlnn_logistic_neg_batch"'],
+
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    layers = ['"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"',
+              '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"', '"13, 13"',
+              '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"', '"5, 5"',
+              '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"', '"5, 5, 5"',
+              '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"', '"5, 5, 5, 5"',
+              '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"', '"3, 3, 3, 3"',
+              '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"', '"3, 3, 3, 3, 3"'],
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0],
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+metrics_pc2005_08_03_0_nov6
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    grid_res = [0.5],
+    layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 2, 3, 1, 1"',
+              '"3, 128, 1, 3, 128, 1, 3, 1, 1"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10]
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0, 0.01, 0.1, 1],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+nips_expt4
+***********************************
+  task_args = {
+    mid = ["quadratic_psd"]
+
+    lam = [0],
+
+    data_path = ["/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"],
+
+    data_train = ["%vars.data_prefix%_train_frac_0.01.mat",
+                  "%vars.data_prefix%_train_frac_0.05.mat",
+                  "%vars.data_prefix%_train_frac_0.10.mat",
+                  "%vars.data_prefix%_train_frac_0.30.mat",
+                  "%vars.data_prefix%_train_frac_0.60.mat",
+                  "%vars.data_prefix%_train_frac_0.80.mat",
+                  "%vars.data_prefix%_train_frac_1.00.mat",
+                  ],
+    data_test = ["%vars.data_prefix%_test.mat"],
+
+    save_suff = ["%vars.save_suffix%_frac_0.01",
+                 "%vars.save_suffix%_frac_0.05",
+                 "%vars.save_suffix%_frac_0.10",
+                 "%vars.save_suffix%_frac_0.30",
+                 "%vars.save_suffix%_frac_0.60",
+                 "%vars.save_suffix%_frac_0.80",
+                 "%vars.save_suffix%_frac_1.00"],
+
+    layers = [''],
+
+    triplet = ["a"],
+ }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"'],
+
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suffix = ["%vars.save_suffix%"],
+
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+               }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+q_psd_pc2017_04_25_1_c15b_train_expts
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"'],
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"'],
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0],
+           //0, 1, 0, 1, 0, 1,
+           //0, 1, 0, 1, 0, 1],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts"'],
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+
+               //'"b"', '"b"', '"b"', '"b"', '"b"', '"b"',
+               //'"mix"', '"mix"', '"mix"', '"mix"', '"mix"', '"mix"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratc_psd_pc2017_04_25_1_cells_15_groupb_training
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 0, 0.001, 0.01, 0.1, 1, 10],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    data_train = ['"data012_lr_15_cells_groupb_with_stimulus_train.mat"'],
+    save_suff = ['"_2017_04_25_1_cells_15_groupb_train"'],
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"', '"b"', '"b"', '"b"', '"b"', '"b"', '"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+q_psd_pc2017_04_25_1_c15b_train_expts_local_metric3
+***********************************
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0],
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    learning_rate = [0.1]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_local_struct"'],
+    //layers = ['"10, 10"', '"5, 5"', '"10, 5"',
+    //          '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+    //          '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"']
+
+     beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+nips_expt1
+***********************************
+  task_args = {
+    mid = ["quadratic_psd"]
+
+    lam = [0],
+
+    data_path = ["/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"],
+
+    data_train = ["%vars.data_prefix%_train_frac_0.01.mat",
+                  "%vars.data_prefix%_train_frac_0.05.mat",
+                  "%vars.data_prefix%_train_frac_0.10.mat",
+                  "%vars.data_prefix%_train_frac_0.30.mat",
+                  "%vars.data_prefix%_train_frac_0.60.mat",
+                  "%vars.data_prefix%_train_frac_0.80.mat",
+                  "%vars.data_prefix%_train_frac_1.00.mat",
+                  ],
+    data_test = ["%vars.data_prefix%_test.mat"],
+
+    save_suff = ["%vars.save_suffix%_frac_0.01",
+                 "%vars.save_suffix%_frac_0.05",
+                 "%vars.save_suffix%_frac_0.10",
+                 "%vars.save_suffix%_frac_0.30",
+                 "%vars.save_suffix%_frac_0.60",
+                 "%vars.save_suffix%_frac_0.80",
+                 "%vars.save_suffix%_frac_1.00"],
+
+    layers = [''],
+
+    triplet = ["a"],
+ }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"'],
+
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suffix = ["%vars.save_suffix%"],
+
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+               }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+metrics_pc2017_04_25_1_conv_august7
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    //data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp1.mat"'],
+    //data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp1.mat"'],
+
+    //data_train = ['"data012_lr_remove_dups_with_stimulus_test_grp2.mat"'],
+    //data_test = ['"data012_lr_remove_dups_with_stimulus_train_grp2.mat"'],
+
+    save_suff = ['"_2017_04_25_1_all_cells_np_dups_grp1_relu"'],
+
+    triplet = ['"a"'],
+    grid_res = [0.5],
+    layers = ['"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2, 10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',],
+    batch_size_train = [10000],
+    lam = [0, 0, 0,
+           0.1, 0.1, 0.1,
+           1, 1, 1,
+           0, 0, 0,
+           0.1, 0.1, 0.1,
+           1, 1, 1,],
+    batch_norm = ['"False"', '"False"', '"False"',
+                  '"False"', '"False"', '"False"',
+                  '"False"', '"False"', '"False"',
+                  '"True"', '"True"', '"True"',
+                  '"True"', '"True"', '"True"',
+                  '"True"', '"True"', '"True"'],
+     }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+neg_batch_nips_more_cells_time_bins2
+***********************************
+  task_args = {
+
+    mid = [
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           '"quadratic_psd"', '"quadratic_psd_scaledI"', '"quadratic_psd_diag"',
+           "'quadratic_constrained'"],
+
+    lam = [0, 0, 0,
+           10, 10, 10,
+           1, 1, 1,
+           0.5, 0.5, 0.5,
+           0.25, 0.25, 0.25,
+           0.05, 0.05, 0.05,
+           0.01, 0.01, 0.01,
+           0.005, 0.005, 0.005,
+           0],
+
+    batch_size_train = [10000],
+    batch_size_test = [10000],
+    learning_rate = [0.1]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"a"'],
+    max_iter = [20000]
+
+ }
+
+***********************************
+fit_metrics_mrf__triplet_a_few_cells
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_long_wn_2rep_ON_OFF.mat"'],
+    triplet_type = ['"a"'],
+    suffix = ['"_wn_2rep_ON_OFF"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratic__triplet_b_few_cells
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF.mat"'],
+    triplet_type = ['"b"'],
+    suffix = ['"_wn_30rep_ON_OFF"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_mrf_mining_nsem
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_nsem_40reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"mix"'],
+    suffix = ['"nsem"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+fit_metrics_mrf
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000]
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+neg_batch_nips_4
+***********************************
+  task_args = {
+
+    mid = ['"mlnn_logistic_neg_batch"'],
+
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    layers = ['"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"',
+              '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"',
+              '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"'],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0],
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+neg_batch_nips_3
+***********************************
+  task_args = {
+
+    mid = ['"mlnn_logistic_neg_batch"'],
+
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    layers = ['"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"', '"15, 15"',
+              '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"', '"30, 30"',
+              '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"', '"10, 10"'],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001,
+            1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+  task_args = {
+
+    mid = ['"quadratic_psd_neg_batch"'],
+    lam = [0],
+    batch_size_train = [100],
+    batch_size_test = [100],
+    learning_rate = [0.01]
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ["%vars.data_prefix%_train.mat"],
+    data_test = ["%vars.data_prefix%_test.mat"],
+    save_suff = ["%vars.save_suffix%"],
+
+    beta = [1, 5, 10, 25, 50, 100, 0.1, 0.01, 0.001],
+    triplet = ['"batch"'],
+    max_iter = [40000]
+
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratc_psd_pc2017_04_25_1_cells_15_groupb
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 0, 0.001, 0.01, 0.1, 1, 10],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    data_train = ['"data012_lr_15_cells_groupb.mat"'],
+    save_suff = ['"_2017_04_25_1_cells_15_groupb"'],
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"', '"b"', '"b"', '"b"', '"b"', '"b"', '"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_response_quadratic_pc2017_04_25_1_tripletb
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    save_suff = ['"_pc2017_04_25_1"'],
+    data_train = ['"data012_lr.mat"'],
+    triplet_type = ['"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_mrf_triplet_b
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+q_psd_pc2017_04_25_1_c15b_train_expts_train_len
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"']
+
+    lam = [0],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.01.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.05.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.10.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.30.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.60.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_0.80.mat"',
+                  '"data012_lr_13_new_cells_groupb_with_stimulus_train_frac_1.00.mat"',
+                  ],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.01"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.05"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.10"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.30"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.60"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_0.80"',
+                 '"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_frac_1.00"'],
+    layers = ['']
+
+    triplet = ['"a"'],
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+q_psd_pc2017_04_25_1_c15b_train_expts_local_metric
+***********************************
+  task_args = {
+    mid = ['"quadratic_psd"', '"quadratic_psd"',
+           '"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           '"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"',
+           '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"', '"mlnn"',
+
+           '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"',
+           '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"', '"mlnn_symm"',
+
+           '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"',
+           '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"', '"mlnn_slim"',
+
+          '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"',
+          '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"', '"mlnn_logistic"',
+
+          '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"',
+          '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"', '"mlnn_logistic_all"'],
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"',
+           //'"quadratic_psd"', '"quadratic_psd"',
+           //'"quadratic_psd_scaledI"', '"quadratic_psd_scaledI"',
+           //'"quadratic_psd_diag"', '"quadratic_psd_diag"'],
+
+    lam = [0, 1, 0, 1, 0, 1,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0],
+           //0, 1, 0, 1, 0, 1,
+           //0, 1, 0, 1, 0, 1],
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+
+    data_train = ['"data012_lr_13_new_cells_groupb_with_stimulus_train.mat"'],
+    data_test = ['"data012_lr_13_new_cells_groupb_with_stimulus_test.mat"'],
+
+    save_suff = ['"_2017_04_25_1_cells_13_new_groupb_train_mutiple_expts_local_struct"'],
+    layers = ['', '', '', '', '', '',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"',
+              '"10, 10"', '"5, 5"', '"10, 5"',
+              '"10, 10, 10"', '"5, 5, 5"', '"10, 5, 3"',
+              '"7, 7"', '"10, 7"', '"15, 15"', '"15, 10"', '"15, 5"', '"10, 3"']
+
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"',
+               '"a"', '"a"', '"a"', '"a"', '"a"', '"a"'],
+
+               //'"b"', '"b"', '"b"', '"b"', '"b"', '"b"',
+               //'"mix"', '"mix"', '"mix"', '"mix"', '"mix"', '"mix"']
+ }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_mrf_mining
+***********************************
+  task_args = {
+    mid = ['"mrf"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"mix"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+metrics_pc2005_08_03_0
+***********************************
+  task_args = {
+    mid = ['"conv_prosthesis"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [10, 50, 100, 1, 5, 0.1, 0.01, 0.001, 1000,
+            10, 50, 100, 1, 5, 0.1, 0.01, 0.001, 1000]
+    grid_res = [0.5],
+    layers = ['"10, 5, 2"', '"10, 5, 2"', '"10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2"', '"10, 5, 2"',
+              '"10, 5, 2"', '"10, 5, 2"' ,'"10, 5, 2"',
+              '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"',
+              '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"', '"10, 5, 2, 10, 5, 2"'], // before, did 10, 5, 2
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+  task_args = {
+    mid = ['"quadratic_psd_neg_batch"']
+
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2005_08_03_0/"'],
+
+    data_train = ["%vars.data_train%"],
+    data_test = ["%vars.data_test%"],
+    save_suff = ["%vars.save_suffix%"],
+
+    triplet = ['"batch"'],
+    beta = [50]
+    batch_size_train = [100],
+    batch_size_test = [10000],
+    lam = [0, 0.01, 0.1, 1],
+    batch_norm = ['"True"'],
+    learning_rate = [0.01]
+     }
+
+binary = metric_eval.par
+
+
+
+
+***********************************
+fit_metrics_quadratc_pc2017_04_25_1_cells_15
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 0, 0.001, 0.01, 0.1, 1, 10],
+    data_path = ['"/home/bhaishahster/metric_learning/examples_pc2017_04_25_1/"'],
+    data_train = ['"data012_lr_15_cells.mat"'],
+    save_suff = ['"_2017_04_25_1_cells_15"'],
+    triplet = ['"a"', '"a"', '"a"', '"a"', '"a"', '"a"', '"b"', '"b"', '"b"', '"b"', '"b"', '"b"']
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratic_mining_hard_examples_triplet_b
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_wn_30reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"b"'],
+    save_suffix = ["_hard_examples_ALL_triplet_b"]
+ }
+
+binary = metric_learn_hard_examples.par
+
+
+
+
+***********************************
+fit_response_metrics
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100]
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratic_mining_nsem
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_nsem_40reps_ON_OFF_ALL_lr.mat"'],
+    triplet_type = ['"mix"'],
+    suffix = ['"nsem"']
+ }
+
+binary = metric_learn_mining.par
+
+
+
+
+***********************************
+fit_metrics_quadratc_constrained
+***********************************
+  task_args = {
+    mid = ['"quadratic_constrained"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    neighbor = [10]
+ }
+
+binary = metric_learn.par
+
+
+
+
+***********************************
+fit_metrics_quadratic__triplet_a_few_cells
+***********************************
+  task_args = {
+    mid = ['"quadratic"'],
+    lam = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],
+    train_data = ['"example_long_wn_2rep_ON_OFF.mat"'],
+    triplet_type = ['"a"'],
+    suffix = ['"_wn_2rep_ON_OFF"']
+ }
+
+binary = metric_learn.par
+
+
+

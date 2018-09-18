@@ -1,0 +1,2160 @@
+
+***********************************
+s_r_embedding_expts_mar_10_1PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suffix=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_10_1PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_5
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_5_6PM"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_margin"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_5_6PM"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_inner_product"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_5_6PM"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_11_9PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['29']
+    save_suffix=['"_trip_1_enc_0.05_dec_0"', '"_trip_1_enc_0.5_dec_0"', '"_trip_1_enc_1_dec_0"',
+                 '"_trip_1_enc_5_dec_0"', '"_trip_1_enc_10_dec_0"', '"_trip_1_enc_15_dec_0"', '"_trip_1_enc_20_dec_0"',
+                 '"_trip_1_enc_40_dec_0"', '"_trip_1_enc_80_dec_0"', '"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_11_9PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['0.05', '0.5', '1', '5', '10', '15', '20', '40', '80', '120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_23_6PM_residual_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_23_6PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_apr_4_11AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_4_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_may_13_5PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_may_13_5PM_all"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['32', '32', '32', '32', '32', '32',
+              '33', '33', '33', '33', '33', '33',
+              '34', '34', '34', '34', '34', '34',
+              '35', '35', '35', '35', '35', '35']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+
+    resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_may_13_5PM_width"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['32', '32', '32', '32', '32', '32', '32',
+              '33', '33', '33', '33', '33', '33', '33',
+              '34', '34', '34', '34', '34', '34', '34',
+              '35', '35', '35', '35', '35', '35', '35']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"'],
+
+    resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_may_13_5PM_height"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_0_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_may_13_5PM_dont_decode_responses"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['0'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_14_11AM_gauss
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_gauss_expt"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_22_1AM_residual_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_22_1AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_21_5PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_21_5PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_3_5PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['27']
+    save_suffix = ['"_convolutional_encoder"'],
+    stim_layers = ['"3, 4, 1, 3, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_3_5PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False', 'True']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+retina_properties
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_folder = ['"/home/bhaishahster/stim-resp_collection_big_wn_retina_properties"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    }
+
+binary = retina_properties.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_14_9AM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = ['39', '39', '39', '39', '39', '39',
+               '39', '39', '39', '39', '39', '39',
+               '39', '39', '39', '39', '39', '39', '7', '7'],
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"','""', '""'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '""', '""'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"',
+                '"lin_rank1"', '"lin_rank1_blind"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_9AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"',
+                      '"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"']
+    learning_rate = ['0.001']
+    batch_train_sz = ['100', '100', '100', '100', '100', '100',
+                      '100', '100', '100', '100', '100', '100',
+                      '100', '100', '100', '100', '100', '100',
+                      '100', '100'],
+    batch_neg_train_sz = ['100', '100', '100', '100', '100', '100',
+                          '100', '100', '100', '100', '100', '100',
+                          '100', '100', '100', '100', '100', '100',
+                          '100', '100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_14_11AM_kernel
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_kernel_expt"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_15_7PM_residual
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"residual"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_15_7PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_14_3PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['29']
+    save_suffix=['"_trip_1_enc_0.05_dec_0"', '"_trip_1_enc_0.5_dec_0"', '"_trip_1_enc_1_dec_0"',
+                 '"_trip_1_enc_5_dec_0"', '"_trip_1_enc_10_dec_0"', '"_trip_1_enc_15_dec_0"', '"_trip_1_enc_20_dec_0"',
+                 '"_trip_1_enc_40_dec_0"', '"_trip_1_enc_80_dec_0"', '"_trip_1_enc_120_dec_0"',
+                 '"_trip_1_enc_240_dec_0"', '"_trip_1_enc_600_dec_0"', '"_trip_1_enc_1200_dec_0"', '"_trip_0_enc_1_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_14_3PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0'],
+    scale_encode = ['0.05', '0.5', '1', '5', '10', '15', '20', '40', '80', '120', '240', '600', '1200', '1'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_5_11PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['27']
+    save_suffix = ['"_convolutional_encoder"'],
+    stim_layers = ['"3, 4, 1, 3, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 1, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 3, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 5, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 6, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 7, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 8, 2"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_5_11PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_12_3PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['29']
+    save_suffix=['"_trip_1_enc_0.05_dec_0"', '"_trip_1_enc_0.5_dec_0"', '"_trip_1_enc_1_dec_0"',
+                 '"_trip_1_enc_5_dec_0"', '"_trip_1_enc_10_dec_0"', '"_trip_1_enc_15_dec_0"', '"_trip_1_enc_20_dec_0"',
+                 '"_trip_1_enc_40_dec_0"', '"_trip_1_enc_80_dec_0"', '"_trip_1_enc_120_dec_0"',
+                 '"_trip_1_enc_240_dec_0"', '"_trip_1_enc_600_dec_0"', '"_trip_1_enc_1200_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_12_3PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['0.05', '0.5', '1', '5', '10', '15', '20', '40', '80', '120', '240', '600', '1200'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_17_9AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_17_9AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+retina_subunits_predict_spks
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_folder = ['"/home/bhaishahster/stim-resp_collection_big_wn_retina_subunit_properties_train"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    is_null = ['True']
+    }
+
+binary = retina_subunits_predict_spks.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_7_9PM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_kernel"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_7_9PM"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_22_12PM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"3, 4, 2, 3, 6, 2, 3, 8, 2, 3, 10, 2"'],
+    resp_layers = ['"3, 4, 2, 3, 6, 2, 3, 8, 2, 3, 10, 2"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_embedding_expt"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_22_12PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_7
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_gauss"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_7_3PM"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_17_6PM_residual_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    taskid = ['4', '4', '8', '8', '12', '12', '16', '16']
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual"', '"residual_inner_product"',
+                '"residual"', '"residual_inner_product"',
+                '"residual"', '"residual_inner_product"',
+                 '"residual"', '"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_17_6PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_20_11PM_residual_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_20_11PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_apr_5_12PM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1"']
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_5_12PM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    valid_cells_boundary = ['7'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1_blind"'],
+    valid_cells_boundary = ['7'],
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_5_12PM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_19_10AM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1"'],
+    resp_layers = ['""'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_19_10AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_26_4PM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['29']
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1 ,3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1 ,3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_26_4PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_sept_7_11AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_a_mat_ei"'],
+    stim_layers = ['"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"',],
+    resp_layers = [ '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"',
+                    '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"',
+                    '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"',
+                    '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_using_retina_id"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_sept_7_11AM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_w_ei_2/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_w_ei_2/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0']
+
+    use_EIs = ['True', 'True', 'True', 'False', 'True', 'True', 'True', 'False',
+              'True', 'True', 'True', 'False', 'True', 'True', 'True', 'False'],
+    ei_layers=['"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"',
+               '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"',
+               '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"',
+               '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"'],
+    batch_norm_ei = ['True'],
+    scale_encode_from_ei = ['1'],
+    scale_regularization_from_ei = ['0'],
+    scale_match_embeddding = ['0.5', '1.0', '2.0', '0.0', '0.5', '1.0', '2.0', '0.0',
+                              '0.5', '1.0', '2.0', '0.0', '0.5', '1.0', '2.0', '0.0']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+linear_embedding
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_folder = ['"/home/bhaishahster/linear_embedding_2"']
+    }
+
+binary = linear_joint_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_19_11AM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_19_11AM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    valid_cells_boundary = ['7'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1_blind"'],
+    valid_cells_boundary = ['7'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_19_11AM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_7_1PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_ce_bn"', '"_ce_bn"', '"_ce_bn"' ,'"_ce_bn"',
+                   '"_ce_bn"', '"_ce_bn"', '"_ce_bn"', '"_ce_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"' ],
+    stim_layers = ['"1, 4, 1, 3, 4, 1, 3, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 2, 2"'],  // Latent dimensionality must match widths of different layers if "sr_model == 'convolutional_encoder_2'"
+    batch_norm = ['True', 'True', 'True', 'True', 'True', 'True', 'True', 'True',
+                  'False', 'False', 'False', 'False', 'False', 'False', 'False', 'False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_28_1PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0',
+                            '0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_1_7PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    //taskid = ['%task%']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_1_7PM_all"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0'],
+    minimize_disk_usage = ['True']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+retina_subunits
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_folder = ['"/home/bhaishahster/stim-resp_collection_big_wn_retina_subunit_properties_train"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"']
+    }
+
+binary = retina_subunits.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_14_11AM_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_expt"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+ln_model
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_folder = ['"/home/bhaishahster/stim-resp_collection_ln_model_exp"']
+
+    }
+
+binary = ln_model.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_14_10AM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = ['28'],
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"1, 5, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"'],
+    resp_layers = ['"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"',
+                    '"3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 2, 3, 64, 2, 3, 1, 1"',
+                    '"1, 1, 1"', '"3, 1, 1"', '"3, 1, 2"',
+                    '"3, 4, 1, 3, 1, 1"', '"3, 64, 1, 3, 1, 1"'
+                    ],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_expt"', '"convolutional_embedding_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_kernel_expt"', '"convolutional_embedding_kernel_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"',
+                '"convolutional_embedding_gauss_expt"', '"convolutional_embedding_gauss_expt"'
+                ],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_10AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.005'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_10AM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1_blind"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_14_10AM"'],
+    learning_rate = ['0.05']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_15_9PM_residual
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"residual"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_15_9PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_6_6PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['27']
+    save_suffix = ['"_convolutional_encoder_2"'],
+    stim_layers = ['"1, 4, 1, 3, 4, 1, 3, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 14, 2"', '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 14, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 12, 2"', '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 12, 2"'],  // Latent dimensionality must match widths of different layers if "sr_model == 'convolutional_encoder_2'"
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_6_6PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False', 'True', 'False', 'True'],
+    scale_encode = ['1'],
+    scale_regularization = ['1']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_30_11AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_ce_bn"', '"_ce_bn"', '"_ce_bn"' ,'"_ce_bn"',
+                   '"_ce_bn"', '"_ce_bn"', '"_ce_bn"', '"_ce_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"' ],
+    stim_layers = ['"1, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 2, 2"'],  // Latent dimensionality must match widths of different layers if "sr_model == 'convolutional_encoder_2'"
+    batch_norm = ['True', 'True', 'True', 'True', 'True', 'True', 'True', 'True',
+                  'False', 'False', 'False', 'False', 'False', 'False', 'False', 'False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_30_11AM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.003'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0',
+                            '0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_apr_9_11AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['32', '32', '32', '32', '32', '32', '32',
+              '33', '33', '33', '33', '33', '33', '33',
+              '34', '34', '34', '34', '34', '34', '34',
+              '35', '35', '35', '35', '35', '35', '35']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"'],
+
+    resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_9_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_apr_11_11AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['32', '32', '32', '32', '32', '32',
+              '33', '33', '33', '33', '33', '33',
+              '34', '34', '34', '34', '34', '34',
+              '35', '35', '35', '35', '35', '35']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+
+    resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+                   '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+                   '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+                   '"1, 16, 4"',
+                   '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+                   '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_11_11AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_aug_29_1PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_ce_bn"', '"_ce_bn"', '"_ce_bn"' ,'"_ce_bn"',
+                   '"_ce_bn"', '"_ce_bn"', '"_ce_bn"', '"_ce_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"',
+                   '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"', '"_ce_no_bn"' ],
+    stim_layers = ['"1, 4, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 2"',
+                   '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 2, 2"'],  // Latent dimensionality must match widths of different layers if "sr_model == 'convolutional_encoder_2'"
+    batch_norm = ['True', 'True', 'True', 'True', 'True', 'True', 'True', 'True',
+                  'False', 'False', 'False', 'False', 'False', 'False', 'False', 'False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_29_1PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0',
+                            '0', '0',
+                            '0.01', '0.01',
+                            '0.1', '0.1',
+                            '1.0', '1.0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_24_12AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_24_12AM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_sept_4_6PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_a_mat_ei"'],
+    stim_layers = ['"1, 4, 1, 3, 2, 1"'],
+    resp_layers = [ '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"', '"3, 2, 2"',
+                    '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"', '"3, 3, 2"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_using_retina_id"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_sept_4_6PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_w_ei_2/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_w_ei_2/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0']
+
+    use_EIs = ['True', 'True', 'True', 'False', 'True', 'True', 'True', 'False'],
+    ei_layers=['"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"', '"3, 4, 2, 3, 4, 2, 3, 2, 2"',
+               '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"', '"3, 4, 2, 3, 4, 2, 3, 3, 2"'],
+    batch_norm_ei = ['True'],
+    scale_encode_from_ei = ['1'],
+    scale_regularization_from_ei = ['0'],
+    scale_match_embeddding = ['0.5', '1.0', '2.0', '0.0', '0.5', '1.0', '2.0', '0.0']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_15_3PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    taskid = ['29']
+    save_suffix=['"_trip_1_enc_0.05_dec_0"', '"_trip_1_enc_0.5_dec_0"', '"_trip_1_enc_1_dec_0"',
+                 '"_trip_1_enc_5_dec_0"', '"_trip_1_enc_10_dec_0"', '"_trip_1_enc_15_dec_0"', '"_trip_1_enc_20_dec_0"',
+                 '"_trip_1_enc_40_dec_0"', '"_trip_1_enc_80_dec_0"', '"_trip_1_enc_120_dec_0"',
+                 '"_trip_1_enc_240_dec_0"', '"_trip_1_enc_600_dec_0"', '"_trip_1_enc_1200_dec_0"', '"_trip_0_enc_1_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_15_3PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions.txt"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0'],
+    scale_encode = ['0.05', '0.5', '1', '5', '10', '15', '20', '40', '80', '120', '240', '600', '1200', '1'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'],
+    save_suff=['"_stim-resp4_loss2"'],
+    //save_suff=['"_stim-resp4"'],
+    stim_layers = ['"1, 5, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+    batch_norm = ['True']
+    save_folder = ['"/home/bhaishahster/end_to_end4"']
+    }
+
+binary = s_r_embedding_multiple_retina.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_16_6PM_residual_expt
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    taskid = ['4', '4', '8', '8', '12', '12', '16', '16']
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 64, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"residual"', '"residual_inner_product"',
+                '"residual"', '"residual_inner_product"',
+                '"residual"', '"residual_inner_product"',
+                 '"residual"', '"residual_inner_product"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_16_6PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    learning_rate = [ '0.001'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_mar_10_5PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suffix=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 1, 3, 16, 1, 3, 16, 1, 3, 2, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_mar_10_5PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big/partitions.txt"'],
+    learning_rate = [ '0.01'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big"']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_july_19_9AM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    //taskid = ['%task%']
+    save_suffix=['"_trip_1_enc_120_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder_l2"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_july_25_4PM_all"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_july_18/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_july_18"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['120'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+//     taskid = ['44', '44', '44', '44', '44', '44',
+//               '45', '45', '45', '45', '45', '45',
+//               '46', '46', '46', '46', '46', '46',
+//               '47', '47', '47', '47', '47', '47']
+//     save_suffix=['"_trip_1_enc_120_dec_0"'],
+//     stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+//
+//     resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 16, 4"',
+//                    '"1, 2, 1, 3, 8, 2, 3, 8, 2, 3, 8, 1, 3, 8, 1"',
+//                    '"1, 2, 1, 3, 4, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1"',
+//                    '"1, 2, 1, 3, 2, 2, 3, 2, 2, 3, 2, 1, 3, 2, 1"'],
+//     batch_norm = ['True'],
+//     valid_cells_boundary = ['7']
+//     sr_model = ['"convolutional_autoembedder_l2"'],
+//     save_folder = ['"/home/bhaishahster/end_to_end_july_19_9AM_width"'],
+//     partition_file = ['"/home/bhaishahster/end_to_end_july_18/partitions.txt"'],
+//     src_dir = ['"/home/bhaishahster/end_to_end_july_18"'],
+//     learning_rate = [ '0.1'],
+//     batch_train_sz = ['100'],
+//     batch_neg_train_sz = ['100'],
+//     scale_triplet = ['1'],
+//     scale_encode = ['120'],
+//     scale_decode = ['0']
+//     }
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+//     taskid = ['44', '44', '44', '44', '44', '44',
+//               '45', '45', '45', '45', '45', '45',
+//               '46', '46', '46', '46', '46', '46',
+//               '47', '47', '47', '47', '47', '47'],
+//     save_suffix=['"_trip_1_enc_120_dec_0"'],
+//     stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"'],
+//
+//     resp_layers =  ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 2, 3, 16, 1"',
+//                    '"1, 2, 1, 3, 16, 4, 3, 16, 1"',
+//                    '"1, 2, 4"', '"1, 2, 1, 3, 16, 2, 3, 16, 1, 3, 16, 1"',
+//                    '"1, 2, 1"'],
+//     batch_norm = ['True'],
+//     valid_cells_boundary = ['7']
+//     sr_model = ['"convolutional_autoembedder_l2"'],
+//     save_folder = ['"/home/bhaishahster/end_to_end_july_19_9AM_height"'],
+//     partition_file = ['"/home/bhaishahster/end_to_end_july_18/partitions.txt"'],
+//     src_dir = ['"/home/bhaishahster/end_to_end_july_18"'],
+//     learning_rate = [ '0.1'],
+//     batch_train_sz = ['100'],
+//     batch_neg_train_sz = ['100'],
+//     scale_triplet = ['1'],
+//     scale_encode = ['120'],
+//     scale_decode = ['0']
+//     }
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+//     // taskid = ['29']
+//     save_suffix=['"_trip_1_enc_0_dec_0"'],
+//     stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+//     resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+//     batch_norm = ['True'],
+//     valid_cells_boundary = ['7']
+//     sr_model = ['"convolutional_autoembedder_l2"'],
+//     save_folder = ['"/home/bhaishahster/end_to_end_july_19_9AM_dont_decode_responses"'],
+//     partition_file = ['"/home/bhaishahster/end_to_end_july_18/partitions.txt"'],
+//     src_dir = ['"/home/bhaishahster/end_to_end_july_18"'],
+//     learning_rate = [ '0.1'],
+//     batch_train_sz = ['100'],
+//     batch_neg_train_sz = ['100'],
+//     scale_triplet = ['1'],
+//     scale_encode = ['0'],
+//     scale_decode = ['0']
+//     }
+
+***********************************
+s_r_embedding_expts_refrac
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    // task_id = ['28'],
+    is_test=['0'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_wn_nsem"'],
+    stim_layers = ['"1, 1, 1, 3, 128, 2, 3, 1, 1"'], //['"1, 5, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+    resp_layers = ['"3, 128, 2, 3, 1, 1"'], //['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+    batch_norm = ['True'],
+    sr_model = ['"convolutional_autoembedder"']
+    save_folder = ['"/home/bhaishahster/end_to_end_refrac_jan_31"'], //_jan_30_2"'],
+    learning_rate = ['0.001']
+    batch_train_sz = ['50'],
+    batch_neg_train_sz = ['50']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_feb_4
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_4_9PM"'],
+    learning_rate = ['0.01']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    save_suff=['"_stim-resp_linear"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection/partitions_linear.txt"'],
+    stim_layers = ['""'],
+    resp_layers = ['""'],
+    sr_model = ['"lin_rank1_blind"']
+    save_folder = ['"/home/bhaishahster/end_to_end_feb_4_9PM"'],
+    learning_rate = ['0.01']
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100']
+
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     // task_id = ['28'],
+//     is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+//     save_suff=['"_stim-resp_wn_nsem"'],
+//     stim_layers = ['"1, 5, 1, 3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+//     resp_layers = ['"3, 128, 1, 3, 128, 1, 3, 128, 1, 3, 128, 2, 3, 128, 2, 3, 1, 1"'],
+//     batch_norm = ['True'],
+//     sr_model = ['"convolutional_embedding"']
+//     save_folder = ['"/home/bhaishahster/end_to_end_refrac"'], //['"/home/bhaishahster/end_to_end_feb_4_9PM"'],
+//     learning_rate = ['0.001']
+//     batch_train_sz = ['100'],
+//     batch_neg_train_sz = ['100']
+//
+//     }
+
+***********************************
+s_r_embedding_expts_aug_31_12PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['3'], // 1 for analysis, 0 for train, 2 for prosthesis, 3 for testing the encoding model
+    taskid = ['27']
+    save_suffix = ['"_a_mat"'],
+    stim_layers = ['"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"',
+                   '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"', '"1, 4, 1, 3, 4, 1, 3, 2, 1"',],
+    resp_layers = [ '"3, 1, 2"', '"3, 2, 2"', '"3, 3, 2"', '"3, 4, 2"', '"3, 5, 2"', '"3, 6, 2"', '"3, 7, 2"', '"3, 8, 2"', '"3, 9, 2"', '"3, 10, 2"',
+                    '"3, 1, 2"', '"3, 2, 2"', '"3, 3, 2"', '"3, 4, 2"', '"3, 5, 2"', '"3, 6, 2"', '"3, 7, 2"', '"3, 8, 2"', '"3, 9, 2"', '"3, 10, 2"'],
+    batch_norm = ['False'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_encoder_using_retina_id"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_aug_31_12PM_enc"'], // previously, july19_9AM
+    partition_file = ['"/home/bhaishahster/end_to_end_aug_1/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/end_to_end_aug_1/"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['500'],
+    batch_neg_train_sz = ['500'],
+    minimize_disk_usage = ['True'],
+    subsample_cells_train = ['False'],
+    scale_encode = ['1'],
+    scale_regularization = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+
+
+***********************************
+s_r_embedding_expts_apr_11_3PM_autoembedder
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    is_test=['1'], // 1 for analysis, 0 for train, 2 for prosthesis
+    // taskid = ['29']
+    save_suffix=['"_trip_1_enc_0_dec_0"'],
+    stim_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    resp_layers = ['"1, 2, 1, 3, 16, 2, 3, 16, 2, 3, 16, 1, 3, 16, 1"'],
+    batch_norm = ['True'],
+    valid_cells_boundary = ['7']
+    sr_model = ['"convolutional_autoembedder"'],
+    save_folder = ['"/home/bhaishahster/end_to_end_apr_11_3PM"'],
+    partition_file = ['"/home/bhaishahster/stim-resp_collection_big_wn/partitions.txt"'],
+    src_dir = ['"/home/bhaishahster/stim-resp_collection_big_wn"'],
+    learning_rate = [ '0.1'],
+    batch_train_sz = ['100'],
+    batch_neg_train_sz = ['100'],
+    scale_triplet = ['1'],
+    scale_encode = ['0'],
+    scale_decode = ['0']
+    }
+
+binary = stimulus_response_embedding.par
+
+
+

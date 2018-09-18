@@ -1,0 +1,24 @@
+
+***********************************
+fit_cells
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+   }
+
+binary = fit.par
+
+
+
+
+***********************************
+fit_cells_NSEM
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = fit_NSEM.par
+
+
+

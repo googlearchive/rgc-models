@@ -1,0 +1,16 @@
+
+***********************************
+jitter.
+***********************************
+  task_args = {
+  mid = ['"relu_window_mother_sfm"'],
+  fname = ['"experiment_jitter"'],
+  window = [16],
+  stride = [16],
+  l_w = [0],
+  }
+
+binary = jitter.par
+
+
+

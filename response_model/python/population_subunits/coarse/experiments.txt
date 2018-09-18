@@ -1,0 +1,435 @@
+
+***********************************
+fits_biases_explore
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_experimental"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10],
+    batchsz = [5000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+whole_pop_jobs_report
+***********************************
+  task_args = {
+  batchsz = [1000],
+  n_b_in_c = [1],
+  step_sz = [10],
+  train_len = [195], // default training data length
+
+  folder_name = ['"experiment_report3"'],
+  model_id = ['"exp_additive"', '"relu"',     '"relu"',   '"relu"',   '"relu"',     '"relu"',    '"relu"' , '"relu"' , '"relu_window"', '"relu_window_mother"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm_exp"'],
+  loss =     [ '"poisson"',    '"poisson"', '"logistic"', '"hinge"', '"poisson"', '"logistic"', '"hinge"', '"poisson"', '"poisson"',          '"poisson"',          '"poisson"',                  '"poisson"'],
+  masked_stimulus = ['"True"',   '"True"',      '"True"', '"True"',   '"False"',    '"False"',  '"False"',  '"False"',    '"False"',            '"False"',          '"False"',                     '"False"'],
+  all_cells = ['"False"',      '"False"',    '"False"',   '"False"', '"True"',     '"True"',    '"True"',   '"True"',      '"True"',             '"True"',          '"True"',                       '"True"'],
+
+  ratio_SU = [2],
+  lam_w = [        0,              0,            0,           0,         0,            0,           0,        0.1,             0,                   0,                 0,                                0],
+  lam_a = [        0,              0,            0,           0,         0,            0,           0,        0.1,             0,                   0,                 0,                                0],
+  stride = [1],
+  window = [2]
+  }
+
+binary = few_cells_tf_refractoring.par
+
+
+
+  task_args = {
+  batchsz = [100, 100, 100, 500, 500, 500, 500, 1000, 1000, 1000, 1000, 10000, 10000, 10000, 10000],
+  n_b_in_c = [10,  10,  10,  2,   2,   2,   2,   1,    1,    1,     1 ,  1,     1,      1,     1],
+  step_sz = [10],
+  train_len = [195], // default training data length
+
+  folder_name = ['"experiment_convs"'],
+  model_id = [ '"relu_window"', '"relu_window_mother"', '"relu_window_mother_sfm"', '"relu_window"', '"relu_window_mother"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm_exp"', '"relu_window"', '"relu_window_mother"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm_exp"', '"relu_window"', '"relu_window_mother"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm_exp"'],
+  loss =     [      '"poisson"'],
+  masked_stimulus = ['"False"'],
+  all_cells = [       '"True"'],
+
+  ratio_SU = [2],
+  lam_w = [0],
+  lam_a = [0],
+  stride = [1],
+  window = [2]
+  }
+
+binary = few_cells_tf_refractoring.par
+
+
+
+
+***********************************
+fits_dropout_scale2
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_exp_dropout_scaling"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10],
+    batchsz = [8000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_wdel_only_dropout
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_exp_dropout_only_wdelta"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10, 50, 100],
+    batchsz = [8000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_wdel_only
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_experimental_wdel_only"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10, 10, 10, 10, 1, 0.1, 0.01],
+    batchsz = [5000, 2000, 1000, 500, 5000, 5000, 5000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    tid = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_dropout
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_exponential_dropout"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10],
+    batchsz = [1000],
+    taskid = [2],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+whole_pop_jobs
+***********************************
+//  task_args = {
+//  mid = ['"relu"','"relu"','"relu"','"relu"',  '"relu"','"relu"','"exp"','"mel_re_pow2"','"mel_re_pow2"','"mel_re_pow2"','"mel_re_pow2"','"mel_re_pow2"','"mel_re_pow2"','"mel_re_pow2"','"relu_logistic"','"relu_logistic"','"relu_logistic"','"relu_logistic"','"relu_logistic"','"relu_logistic"','"relu_logistic"','"relu_proximal"','"relu_proximal"','"relu_proximal"','"relu_proximal"','"relu_proximal"','"relu_proximal"','"relu_eg"',  '"relu_eg"', '"relu_eg"'],
+//  l_w = ['0.1',   '0.01',  '0.001', '0.0001', '0.00001', '0.0',   '0.0'  ,   '0.1',        '0.01',         '0.001',         '0.0001',        '0.00001',      '0',             '0.001',          '0.1',            '0.01',         '0.001',         '0.0001',              '0.00001',          '0',              '0.001' ,    '0.1',        '0.001',           '0.00001',          '0.1',          '0.001',         '0.00001',         '0.0001',   '0.0001',    '0.0001'],
+//  l_a = ['0.1',   '0.01',  '0.001', '0.0001', '0.00001', '0.0',   '0.0'  ,   '0.1',        '0.01',        '0.001',          '0.0001',        '0.00001',      '0',             '0.1',            '0.1',            '0.01',         '0.001',         '0.0001',              '0.00001',          '0',              '0.1',       '0.1',        '0.001',           '0.00001',          '0.1',           '0.001',         '0.00001',          '0',         '0',         '0'],
+//  e_w = [  '0',    '0',    '0',        '0',      '0',     '0',     '0',      '0',            '0',           '0',              '0',            '0',           '0',             '0',              '0',              '0',            '0',             '0',                      '0',             '0',             '0',          '0.1',         '0.001',           '0.00001',          '0.001',        '0.001',         '0.0001',          '0.001',     '0.001',    '0.01'],
+//  e_a = [  '0',    '0',    '0',        '0',      '0',     '0',     '0',      '0',            '0',           '0',              '0',            '0',           '0',             '0',              '0',              '0',            '0',             '0',                      '0',             '0',             '0',          '0.1',         '0.001',           '0.00001',          '0.1',           '0.01',          '0.01',            '1',         '0.1',     '0.01'],
+//  }
+  task_args = {
+  mid = ['"relu"','"relu"','"relu"','"relu"',  '"relu"','"relu"'],
+  l_w = ['0.1',   '0.01',  '0.001', '0.0001', '0.00001', '0.0' ],
+  l_a = ['0.1',   '0.01',  '0.001', '0.0001', '0.00001', '0.0'],
+  e_w = [  '0',    '0',    '0',        '0',      '0',     '0' ],
+  e_a = [  '0',    '0',    '0',        '0',      '0',     '0' ]
+  fname = ['"experiment31"']
+  }
+//  task_args = {
+//  mid = ['"relu"'],
+//  l_w = ['0.1' ],
+//  l_a = ['0.1'],
+//  e_w = ['0'],
+//  e_a = ['0'],
+//  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+
+***********************************
+whole_pop_jobs_conv
+***********************************
+  task_args = {
+  mid = ['"relu_window"', '"relu_window"', '"relu_window"', '"relu_window"', '"relu_window"' ],
+  fname = ['"experiment4"', '"experiment4"', '"experiment4"', '"experiment4"', '"experiment4"']
+  window = [2, 3, 5, 7, 9]
+  stride = [1, 3, 3, 5, 5]
+  l_w = [0, 0, 0, 0, 0]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window"', '"relu_window"', '"relu_window"', '"relu_window"' ],
+  fname = ['"experiment5"', '"experiment5"', '"experiment5"', '"experiment5"']
+  window = [3, 3, 3, 3]
+  stride = [3, 3, 3, 3]
+  l_w = [0, 0.0001, 0.001, 0.01]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_mother"', '"relu_window_mother"', '"relu_window_mother"', '"relu_window_mother"', '"relu_window_mother"' , '"relu_window_mother"' ],
+  fname = ['"experiment6"', '"experiment6"', '"experiment6"', '"experiment6"', '"experiment6"', '"experiment6"']
+  window = [2, 2,     3, 3, 3, 3]
+  stride = [1, 1,     3, 3, 3, 3]
+  l_w = [0,    0.001, 0, 0.0001, 0.001, 0.01]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_mother_sfm"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm"', '"relu_window_mother_sfm"' ],
+  fname = ['"experiment7"', '"experiment7"', '"experiment7"', '"experiment7"', '"experiment7"', '"experiment7"', '"experiment7"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"', '"relu_window_mother_sfm_exp"' ],
+  fname = ['"experiment8"', '"experiment8"', '"experiment8"', '"experiment8"', '"experiment8"', '"experiment8"', '"experiment8"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_exp"', '"relu_window_exp"', '"relu_window_exp"', '"relu_window_exp"', '"relu_window_exp"', '"relu_window_exp"', '"relu_window_exp"' ],
+  fname = ['"experiment9"', '"experiment9"', '"experiment9"', '"experiment9"', '"experiment9"', '"experiment9"', '"experiment9"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_mother_exp"', '"relu_window_mother_exp"', '"relu_window_mother_exp"', '"relu_window_mother_exp"', '"relu_window_mother_exp"', '"relu_window_mother_exp"', '"relu_window_mother_exp"' ],
+  fname = ['"experiment10"', '"experiment10"', '"experiment10"', '"experiment10"', '"experiment10"', '"experiment10"', '"experiment10"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"' ],
+  fname = ['"experiment11"', '"experiment11"', '"experiment11"', '"experiment11"', '"experiment11"', '"experiment11"', '"experiment11"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"' ],
+  fname = ['"experiment14"', '"experiment14"', '"experiment14"', '"experiment14"', '"experiment14"', '"experiment14"', '"experiment14"']
+  window = [3, 3, 3, 3, 3, 3, 3]
+  stride = [3, 3, 3, 3, 3, 3, 3 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"', '"relu_window_a_support"' ],
+  fname = ['"experiment15"', '"experiment15"', '"experiment15"', '"experiment15"', '"experiment15"', '"experiment15"', '"experiment15"']
+  window = [5, 5, 5, 5, 5, 5, 5]
+  stride = [5, 5, 5, 5, 5, 5, 5 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"' ],
+  fname = ['"experiment12"', '"experiment12"', '"experiment12"', '"experiment12"', '"experiment12"', '"experiment12"', '"experiment12"']
+  window = [2, 2, 2, 2, 2, 2, 2]
+  stride = [1, 1, 1, 1, 1, 1, 1 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"' ],
+  fname = ['"experiment13"', '"experiment13"', '"experiment13"', '"experiment13"', '"experiment13"', '"experiment13"', '"experiment13"']
+  window = [3, 3, 3, 3, 3, 3, 3]
+  stride = [3, 3, 3, 3, 3, 3, 3 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+  task_args = {
+  mid = ['"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"', '"exp_window_a_support"' ],
+  fname = ['"experiment16"', '"experiment16"', '"experiment16"', '"experiment16"', '"experiment16"', '"experiment16"', '"experiment16"']
+  window = [5, 5, 5, 5, 5, 5, 5]
+  stride = [5, 5, 5, 5, 5, 5, 5 ]
+  l_w = [0, 0.0001, 0.001, 0.01, 0.1, 1, 10]
+  }
+
+binary = whole_population_fixed_tf.par
+
+
+
+
+***********************************
+fits_stepsz_explore
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_experimental"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10, 50, 100, 1000, 10000],
+    batchsz = [5000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_mel_clustering3
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_mel_dropout_only_wdelta"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [100, 500, 1000, 5000, 10000, 100000],
+    batchsz = [100000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_mel_clustering2
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_mel_dropout_only_wdelta"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [100, 500, 1000, 5000, 10000, 100000],
+    batchsz = [100000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_mel_clustering
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_mel_dropout_only_wdelta"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [1, 10, 100, 1000, 10000, 100000],
+    batchsz = [100000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_id = [0]
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_dropout_scale
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional_exp_dropout_scaling"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10],
+    batchsz = [1000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+
+
+***********************************
+fits_tf_records
+***********************************
+  task_args = {
+    mid = ['"almost_convolutional"'],
+    loss_string = ['"poisson"']
+    fname = vars.folder_name,
+    step_sz = [10, 1, 0.1, 0.01],
+    batchsz = [5000],
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+ }
+
+binary = coarse_subunit_model_tfRec.par
+
+
+

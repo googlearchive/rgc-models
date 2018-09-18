@@ -1,0 +1,364 @@
+
+***********************************
+approximate_conv_multigpu_stimlr2
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name
+    window = [4],
+    stride = [2],
+    l_w = [0, 0.001, 0.01, 0.1, 1, 10, 100, 1000],//,  0.001, 0.01, 0.1, 1, 10, 100,  1000  ],
+    step_sz = [10],
+    config_params = vars.config_params
+    architecture = ['"2 layer_stimulus"'],
+    stim_win = [4],
+    stim_stride = [4],
+    batchsz = [1000],
+    num_chunks = [10],
+ }
+
+binary = approximate_conv.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_a_mask_with_wdel
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.01],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [8],
+    stim_stride = [4],
+    window_mp = [1],
+    stride_mp = [2],
+    window = [2],
+    stride = [1],
+    l_w = [10],
+    l_a = [0,0.001, 0.1, 1, 10, 100, 10000, 100000, 0],
+    if_weighted_LL = ['True'],
+    if_a_sfm = ['False', 'False', 'False', 'False', 'False','False','False','False', 'True'],
+
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_complex_a_l1_proj
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.1          ,1     ,0.1     ,1        ,0.1    ,1 ,    0.1   ,1    ,1     ,1      ,1],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [120          ,1200   ,120    ,1200    ,120    ,1200  ,120, 1200    ,1200   ,1200  ,1200],
+    num_chunks = [1         ,10     ,1       ,10     ,1     ,10      ,1   ,10     ,10     ,10    ,10],
+    stim_win = [4, 4, 4, 4, 4, 4, 4, 4, 8    ,8, 8],
+    stim_stride = [2, 2, 2, 2, 2, 2, 2, 2, 4 ,8, 8],
+    window_mp = [2, 2, 2, 2, 2, 2, 2, 2, 0   ,0, 0],
+    stride_mp = [2, 2, 2, 2, 2, 2, 2, 2, 1   ,1, 1],
+    window = [2],
+    stride = [1],
+    l_w = [0 , 0, 0, 0, 0, 0, 10, 10, 10 ,10, 10],
+    l_a = [0,  0, 0, 0, 0, 0,  0,  0,  0,  0, 10]
+    r_a = [1000000            ,1000000   ,50     ,50     ,25    ,25, 50, 50, 50, 50, 1000000]
+    if_a_sfm = [false]
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_1GPU
+***********************************
+  task_args = {
+  mid = ['"relu_window_mother_sfm"'],
+  fname = ['"expt_jitter_1GPU"'],
+  window = [16],
+  stride = [16],
+  l_w = [0],
+  step_sz = [5,10,20,50,100,200,500,1000,5000,10000]
+  }
+
+binary = approximate_conv.par
+
+
+
+
+***********************************
+approximate_conv_joined
+***********************************
+
+binary = build.binfile
+
+
+
+    task_args = {
+    fname = ["%vars.folder%"],
+    }
+
+***********************************
+approximate_conv_multigpu_complex_a_sfm_mask_with_wdel_analyse
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.01],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [8],
+    stim_stride = [4],
+    window_mp = [1],
+    stride_mp = [2],
+    window = [2],
+    stride = [1],
+    l_w = [10],
+    l_a = [1000000],
+    if_weighted_LL = ['True'],
+    if_a_sfm = [ 'True'],
+    learn = [0]
+
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_a_mask
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [1],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [8],
+    stim_stride = [8],
+    window_mp = [1],
+    stride_mp = [1],
+    window = [2],
+    stride = [1],
+    l_w = [0],
+    l_a = [0, 0.01, 0.1, 1, 10, 100]
+    if_a_sfm = ['False'],
+
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_a_sfm_mask_with_wdel
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.01],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [8],
+    stim_stride = [4],
+    window_mp = [1],
+    stride_mp = [2],
+    window = [2],
+    stride = [1],
+    l_w = [10],
+    l_a = [ 1000000],
+    if_weighted_LL = ['True'],
+    if_a_sfm = [ 'True'],
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+load_all_jitter_data_test
+***********************************
+
+binary = get_data_mat_fast.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_a_sfm_mask_with_wdel_vary_conv
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.001],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [4   ,4],
+    stim_stride = [4  ,6],
+    window_mp = [0],
+    stride_mp = [1],
+    window = [2],
+    stride = [1],
+    l_w = [10],
+    l_a = [ 1000000],
+    if_weighted_LL = ['True'],
+    if_a_sfm = ['True'],
+
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_stimlr
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name
+    window = [4],
+    stride = [2],
+    l_w = [0],//,  0.001, 0.01, 0.1, 1, 10, 100,  1000  ],
+    step_sz = [1],
+    config_params = vars.config_params
+    architecture = ['"2 layer_stimulus"'],
+    stim_win = [4],
+    stim_stride = [4],
+    batchsz = [400,500,600,700,800,900,1000,],
+    num_chunks = [4,5,6,7,8,9,10],
+ }
+
+binary = approximate_conv.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_test
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [1],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [1000, 5000,10000],
+    num_chunks = [10, 50, 100],
+    stim_win = [4],
+    stim_stride = [2],
+    window_mp =     [2],
+    stride_mp =      [2],
+    window = [2],
+    stride = [1],
+    l_w = [10],
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex_a_sfm_mask
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [1, 1, 0.1, 0.1],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [2000],
+    stim_win = [8],
+    stim_stride = [8, 4, 8, 4],
+    window_mp = [1],
+    stride_mp = [1, 2, 1, 2],
+    window = [2],
+    stride = [1],
+    l_w = [0],
+    l_a = [0],
+    if_a_sfm = ['True'],
+
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+
+
+***********************************
+approximate_conv_multigpu
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name
+    window = [16],
+    stride = [16, 16,   16, 16, 16,   16  ,16    ,16 ],
+    l_w = [   0,  0.001, 0.01, 0.1, 1, 10, 100,  1000  ],
+    step_sz = [10],
+    config_params = vars.config_params
+  }
+
+binary = approximate_conv.par
+
+
+
+
+***********************************
+approximate_conv
+***********************************
+
+binary = build.binfile
+
+
+
+
+***********************************
+approximate_conv_multigpu_complex
+***********************************
+  task_args = {
+    mid = ['"relu_window_mother_sfm"'],
+    fname = vars.folder_name,
+    step_sz = [0.1              ,1     ,0.1     ,1      ,0.1  ,0.1, 0.1   ,1    ,1    ,1],
+    config_params = vars.config_params,
+    architecture = ['"complex"'],
+    batchsz = [120              ,1000  ,120    ,1000    ,120 ,120  ,120   ,1000  ,1000  ,1000],
+    num_chunks = [1             ,10    ,1      ,10      ,1   ,1    ,1      ,10   ,10    ,10],
+    stim_win = [4               ,4     ,8      ,8       ,4   ,4    ,4      ,4    ,4     ,4],
+    stim_stride = [2            ,2     ,2      ,2       ,2   ,2    ,2      ,2    ,2     ,2],
+    window_mp =     [2         ,2     ,3      ,3       ,2   ,2    ,2      ,2    ,2     ,2],
+    stride_mp =      [2         ,2     ,2      ,2       ,2   ,2    ,2      ,2    ,2     ,2],
+    window = [2                 ,2     ,2      ,2       ,2   ,2    ,2      ,2    ,2     ,2],
+    stride = [1                 ,1     ,1      ,1       ,1   ,1    ,1      ,1    ,1     ,1],
+    l_w = [0                    ,0     ,0      ,0       ,0.1 ,1    ,10    ,0.1  ,1     ,10],
+    // base case, bigger batch size, bigger stim_lr, bigger stim_lr + bigger batch sz, lam_wx3, lam_w+bigger batchsz x3
+ }
+
+binary = approximate_conv_2.par
+
+
+

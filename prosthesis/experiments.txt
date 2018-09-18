@@ -1,0 +1,65 @@
+
+***********************************
+stimulation_pgd
+***********************************
+  task_args = {
+      learning_rate = ['0.001', '0.005', '0.01', '0.05', '0.1', '5',
+                       '10', '50', '100',
+                       '500', '1000',
+                       '0.001', '0.005', '0.01', '0.05', '0.1', '5',
+                       '10', '50', '100',
+                       '500', '1000',
+                       '0.001', '0.005', '0.01', '0.05', '0.1', '5',
+                       '10', '50', '100',
+                       '500', '1000'],
+      t_max = ['20'],
+      delta = ['5'],
+      normalization = ['"C"', '"C"', '"C"', '"C"', '"C"', '"C"',
+                       '"C"', '"C"', '"C"', '"C"', '"C"',
+                       '"T-i"', '"T-i"', '"T-i"', '"T-i"', '"T-i"', '"T-i"',
+                       '"T-i"', '"T-i"', '"T-i"', '"T-i"', '"T-i"',
+                       '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"',
+                       '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"', '"sqrt(T-i)"'],
+      save_dir = ['"/home/bhaishahster/stimulation_algos/pgd/"']
+      Algorithm = ['simultaneous_planning']
+    }
+
+binary = stimulation_pgd.par
+
+
+
+  task_args = {
+      t_max = ['20'],
+      delta = ['5'],
+      save_dir = ['"/home/bhaishahster/stimulation_algos/greedy/"']
+      Algorithm = ['greedy']
+    }
+
+binary = stimulation_pgd.par
+
+
+
+
+***********************************
+stimulation_pgd_vary_conditions
+***********************************
+  task_args = {
+              delta = ['100'],
+              learning_rate = ['0.1'] // 1
+              save_dir = ['"/home/bhaishahster/stimulation_algos/dictionaries_delta_100_hw_3/"']
+              }
+
+binary = stimulation_pgd_vary_conditions.par
+
+
+
+  task_args = {
+              delta = ['5'],
+              learning_rate = ['0.5'] // 5
+              save_dir = ['"/home/bhaishahster/stimulation_algos/dictionaries_delta_5_hw_3/"']
+              }
+
+binary = stimulation_pgd_vary_conditions.par
+
+
+

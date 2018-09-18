@@ -1,0 +1,246 @@
+
+***********************************
+fit_coarse
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+   }
+
+binary = fit_coarse.par
+
+
+
+
+***********************************
+fit_nsem_3_datasets
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_nsem_3_datasets_aug.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_nsem_3_datasets_aug/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_nsem_3_datasets_aug_partial/"']
+   }
+
+binary = fit_nsem_3_datasets.par
+
+
+
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_nsem_3_datasets_aug_2.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_nsem_3_datasets_aug/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_nsem_3_datasets_aug_partial/"']
+   }
+
+binary = fit_nsem_3_datasets.par
+
+
+
+
+***********************************
+fit_coarse_2015_11_09_1
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_1/"'],
+    task_params_file = ['"/home/bhaishahster/tasks_coarse_2015_11_09_1.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_jan_2015_11_09_1/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_jan_2015_11_09_1_partial/"'],
+
+
+   }
+
+binary = fit_coarse.par
+
+
+
+
+***********************************
+fit_coarse_pop
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    //task_params_file = ['"/home/bhaishahster/tasks_coarse_pop_common_mask_4.txt"'],
+    //save_path = ['"/home/bhaishahster/su_fits_nov_pop_common_mask_4/"'],
+    //save_path_partial = ['"/home/bhaishahster/su_fits_nov_pop_common_mask_4_partial/"']
+    task_params_file = ['"/home/bhaishahster/tasks_coarse_pop_common_mask_aug_2.txt"'], // Alt: "/home/bhaishahster/tasks_coarse_pop_common_mask_aug.txt"
+    save_path = ['"/home/bhaishahster/su_fits_nov_pop_common_mask_aug/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_nov_pop_common_mask_aug_partial/"']
+
+   }
+
+binary = fit_coarse.par
+
+
+
+
+***********************************
+fit_nsem_2015-10-29-2
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_nsem_2015-11-09-3_2.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_jan_nsem/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_jan_nsem_partial/"']
+   }
+
+binary = fit_nsem_2015-10-29-2.par
+
+
+
+
+***********************************
+fit_null
+***********************************
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     task_params_file = ['"/home/bhaishahster/tasks_null_2015_10_29_2_aug.txt"'],
+//     src_dir = ['"/home/bhaishahster/Null data/pc2015_10_29_2/"'],
+//     save_path = ['"/home/bhaishahster/su_fits_aug_null_pc2015_10_29_2_new/"'],
+//     save_path_partial = ['"/home/bhaishahster/su_fits_aug_null_pc2015_10_29_2_new_partial/"'],
+//     datarun = ['3']
+//    }
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_null_2015_10_29_2_aug.txt"'],
+    src_dir = ['"/home/bhaishahster/Null data/pc2015_10_29_2/"'],
+    save_path = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_10_29_2_new/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_10_29_2_new_partial/"'],
+    datarun = ['2']
+   }
+
+binary = fit_null.par
+
+
+
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     task_params_file = ['"/home/bhaishahster/tasks_null_2015_11_09_1_aug.txt"'],
+//     src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_1/"'],
+//     save_path = ['"/home/bhaishahster/su_fits_aug_null_pc2015_11_09_1_new/"'],
+//     save_path_partial = ['"/home/bhaishahster/su_fits_aug_null_pc2015_11_09_1_new_partial/"'],
+//     datarun = ['3']
+//    }
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     task_params_file = ['"/home/bhaishahster/tasks_null_2015_11_09_1_aug.txt"'],
+//     src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_1/"'],
+//     save_path = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_11_09_1_new/"'],
+//     save_path_partial = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_11_09_1_new_partial/"'],
+//     datarun = ['2']
+//    }
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     task_params_file = ['"/home/bhaishahster/tasks_null_2015_11_09_8_aug.txt"'],
+//     src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_8/"'],
+//     save_path = ['"/home/bhaishahster/su_fits_aug_null_pc2015_11_09_8_new/"'],
+//     save_path_partial = ['"/home/bhaishahster/su_fits_aug_null_pc2015_11_09_8_new_partial/"'],
+//     datarun = ['3']
+//    }
+//   task_args = {
+//     tmp_dir = myalloc.managed_dirs.tmp.path,
+//     task_params_file = ['"/home/bhaishahster/tasks_null_2015_11_09_8_aug.txt"'],
+//     src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_8/"'],
+//     save_path = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_11_09_8_new/"'],
+//     save_path_partial = ['"/home/bhaishahster/su_fits_aug_wn_pc2015_11_09_8_new_partial/"'],
+//     datarun = ['2']
+//    }
+
+***********************************
+fit_fine
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_suffix = ['"_nov"'],
+    task_params_file = ['"/home/bhaishahster/pc2005_08_08_1/tasks_fine_3.txt"']
+   }
+
+binary = fit_fine.par
+
+
+
+
+***********************************
+fit_compare_conv_deep
+***********************************
+  // task_args = {
+  //   tmp_dir = myalloc.managed_dirs.tmp.path,
+  //   task_params_file = ['"/home/bhaishahster/tasks_compare_conv_deep.txt"'],
+  //   save_path = ['"/home/bhaishahster/su_fits_dec_compare_conv_deep/"'],
+  //   save_path_partial = ['"/home/bhaishahster/su_fits_dec_compare_conv_deep_partial/"']
+  //  }
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_less_data_su_few_cells_2.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_dec_compare_conv_deep/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_dec_compare_conv_deep_partial/"']
+   }
+
+binary = fit_coarse_compare_conv_deep.par
+
+
+
+
+***********************************
+fit_fine_2
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_suffix = ['"_nov_2"'],
+    task_params_file = ['"/home/bhaishahster/pc2005_08_08_1/tasks_fine_2.txt"']
+   }
+
+binary = fit_fine.par
+
+
+
+
+***********************************
+fit_fine_population
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    save_suffix = ['"_jan"'],
+    task_params_file = ['"/home/bhaishahster/pc2005_08_08_1/tasks_fine_population.txt"']
+    save_path = ['"/home/bhaishahster/su_fine_pop_jan/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fine_pop_jan_partial/"'],
+
+   }
+
+binary = fit_fine_population.par
+
+
+
+
+***********************************
+fit_compare_conv
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    task_params_file = ['"/home/bhaishahster/tasks_compare_conv.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_dec_compare_conv/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_dec_compare_conv_partial/"']
+   }
+
+binary = fit_coarse_compare_conv.par
+
+
+
+
+***********************************
+fit_coarse_2015_11_09_8
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+    src_dir = ['"/home/bhaishahster/Null data/pc2015_11_09_8/"'],
+    task_params_file = ['"/home/bhaishahster/tasks_coarse_2015_11_09_8.txt"'],
+    save_path = ['"/home/bhaishahster/su_fits_jan_2015_11_09_8/"'],
+    save_path_partial = ['"/home/bhaishahster/su_fits_jan_2015_11_09_8_partial/"'],
+
+
+   }
+
+binary = fit_coarse.par
+
+
+

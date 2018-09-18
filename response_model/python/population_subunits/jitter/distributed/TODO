@@ -1,0 +1,40 @@
+
+Goal: Get 'a' to look good on in simplified model!
+So far, removed w_del (made it 0), a non-zero only for a few windows near STA, 
+
+
+1. use soft max for a? 
+2. L1 norm on a?
+3. initialization bad?
+4. Bigger batch sizes? 
+
+
+2. To analyse different L1 norm on a , use: 
+
+a softmax (vary step size, stim stride)
+
+ why NaN with L1 norm ? 
+
+TODO: 
+0. See how current models - with softmax a, masked a and w_del=0 does.
+1. Run same analysis on smaller set of windows per cell?
+2. Model deploy - L1 regularization on 'a' - 2 optimizers idea.
+3. weighted log-likelihood . how does it do ? 
+4. code for STA for a cell using model.
+5. make table for summarizing different analyses till now.
+
+
+Analysis: 
+analyse previous good runs
+3 classes of models: 
+1. approxconv (directly applying the coarse model)
+2. approxconv.. _stimlr ()
+3. approxconv_2
+All "approxconv" models - some are very good fits in w_mother and stim_lr - see how the fits look!
+bhaishahster.approxconv.6x1
+bhaishahster.approxconv.5x1_stimlr.tensorboard
+bhaishahster.approxconv.4x1.tensorboard
+
+approxconv_2 ?
+
+analyse new  job - very restricted and simple model

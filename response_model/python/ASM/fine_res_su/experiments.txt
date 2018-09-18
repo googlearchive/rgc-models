@@ -1,0 +1,25 @@
+
+***********************************
+fit_cells
+***********************************
+  task_args = {
+    cell_string = ['"Cell_1262.mat"']
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+   }
+
+binary = fit.par
+
+
+
+
+***********************************
+fit_cells_no_gpu
+***********************************
+  task_args = {
+    tmp_dir = myalloc.managed_dirs.tmp.path,
+   }
+
+binary = fit.par
+
+
+

@@ -1,0 +1,371 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+r""""Run analyses on learnt metric/score function.
+
+We load a learnt metric and test responses which are repeated
+presentations of a short stimuli, and perform various analyses such as:
+* Accuracy of triplet ordering.
+* Precision recall analysis of triplet ordering.
+* Evaluating clustering of responses generated due to same stimulus.
+* Retrieval of nearest responses in training data and
+    using it to decode the stimulus corresponding to test responses.
+The output of all the analyses is stored in a pickle file.
+"""
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+import os.path
+import pickle
+import numpy as np
+import tensorflow as tf
+from absl import app
+from absl import gfile
+import sklearn
+import sklearn.manifold as manifold
+import retina.response_model.python.metric_learning.analyse_metric as analyse
+import retina.response_model.python.metric_learning.config as config
+import retina.response_model.python.metric_learning.data_util as du
+from tensorflow.python.profiler import PrintModelAnalysis
+
+FLAGS = tf.app.flags.FLAGS
+
+
+def main(unused_argv=()):
+
+  # set random seed
+  np.random.seed(121)
+  print('random seed reset')
+
+  # Get details of stored model.
+  model_savepath, model_filename = config.get_filepaths()
+
+  # Load responses to two trials of long white noise.
+  data_wn = du.DataUtilsMetric(os.path.join(FLAGS.data_path, FLAGS.data_test))
+
+  # Quadratic score function.
+  with tf.Session() as sess:
+
+    # Define and restore/initialize the model.
+    tf.logging.info('Model : %s ' % FLAGS.model)
+    met = config.get_model(sess, model_savepath, model_filename,
+                           data_wn, True)
+    print('IS_TRAINING = TRUE!!! ')
+    tf.logging.info('IS_TRAINING = TRUE!!! ')
+
+    PrintModelAnalysis(tf.get_default_graph())
+
+    # get triplets
+    # triplet A
+    outputs = data_wn.get_triplets(batch_size=FLAGS.batch_size_test,
+                                   time_window=FLAGS.time_window)
+    anchor_test, pos_test, neg_test, _, _, _ = outputs
+    triplet_a = (anchor_test, pos_test, neg_test)
+
+    # triplet B
+    outputs = data_wn.get_tripletsB(batch_size=FLAGS.batch_size_test,
+                                    time_window=FLAGS.time_window)
+    anchor_test, pos_test, neg_test, _, _, _ = outputs
+    triplet_b = (anchor_test, pos_test, neg_test)
+
+    triplets = [triplet_a, triplet_b]
+    triplet_labels = ['triplet A', 'triplet B']
+
+    analysis_results = {}  # collect analysis results in a dictionary
+
+    # 1. Plot distances between positive and negative pairs.
+    # analyse.plot_pos_neg_distances(met, anchor_test, pos_test, neg_test)
+    # tf.logging.info('Distances plotted')
+
+    # 2. Accuracy of triplet orderings - fraction of triplets where
+    # distance with positive is smaller than distance with negative.
+    triplet_dict = {}
+    for iitriplet, itriplet in enumerate(triplets):
+      dist_pos, dist_neg, accuracy = analyse.compute_distances(met, *itriplet)
+      dist_analysis = {'pos': dist_pos,
+                       'neg': dist_neg,
+                       'accuracy': accuracy}
+      triplet_dict.update({triplet_labels[iitriplet]: dist_analysis})
+    analysis_results.update({'distances': triplet_dict})
+    tf.logging.info('Accuracy computed')
+
+    # 3. Precision-Recall analysis : declare positive if s(x,y)<t and
+    # negative otherwise. Vary threshold t, and plot precision-recall and
+    # ROC curves.
+    triplet_dict = {}
+    for iitriplet, itriplet in enumerate(triplets):
+      output = analyse.precision_recall(met, *itriplet, toplot=False)
+      precision_log, recall_log, f1_log, fpr_log, tpr_log, pr_data = output
+      pr = {'precision': precision_log, 'recall': recall_log,
+            'pr_data': pr_data}
+      roc = {'TPR': tpr_log, 'FPR': fpr_log}
+      pr_results = {'PR': pr, 'F1': f1_log, 'ROC': roc}
+      triplet_dict.update({triplet_labels[iitriplet]: pr_results})
+    analysis_results.update({'PR_analysis': triplet_dict})
+    tf.logging.info('Precision Recall, F1 score and ROC curves computed')
+
+    # 4. Clustering analysis: How well clustered are responses for a stimulus?
+    # Get all trials for a few (1000) stimuli and compute
+    # distances between all pairs of points.
+    # See how many of responses generated by same stimulus are actually
+    # near to each other.
+    n_tests = 10
+    p_log = []
+    r_log = []
+    s_log = []
+    resp_log = []
+    dist_log = []
+    embedding_log = []
+    for itest in range(n_tests):
+
+      n_stims = 10  # previously 100
+      tf.logging.info('Number of random samples is : %d' % n_stims)
+      resp_fcn = data_wn.get_response_all_trials
+      resp_all_trials, stim_id = resp_fcn(n_stims, FLAGS.time_window,
+                                          random_seed=itest)
+
+      #  TODO(bhaishahster) : Remove duplicates from resp_all_trials
+      distance_pairs = analyse.get_pairwise_distances(met, resp_all_trials)
+      k_log = [1, 2, 3, 4, 5, 10, 15, 20, 50, 75, 100, 200, 300, 400, 500]
+      precision_log = []
+      recall_log = []
+      for k in k_log:
+        precision, recall = analyse.topK_retrieval(distance_pairs, k, stim_id)
+        precision_log += [precision]
+        recall_log += [recall]
+
+      p_log += [precision_log]
+      r_log += [recall_log]
+      s_log += [stim_id]
+      resp_log += [resp_all_trials]
+      dist_log += [distance_pairs]
+
+
+      #tf.logging.info('Getting 2D t-SNE embedding')
+      #model = manifold.TSNE(n_components=2)
+      #tSNE_embedding = model.fit_transform(distance_pairs)
+      #embedding_log += [tSNE_embedding]
+
+    all_trials = {'distances': dist_log, 'K': k_log,
+                  'precision': p_log,
+                  'recall': r_log,
+                  'probe_stim_idx': s_log, 'probes': resp_log,
+                  'embedding': embedding_log}
+    analysis_results_clustering = {'all_trials': all_trials}
+    pickle_file_clustering = (os.path.join(model_savepath, model_filename)
+                              + '_' + FLAGS.data_test +
+                              '_analysis_clustering.pkl')
+    pickle.dump(analysis_results_clustering, gfile.Open(pickle_file_clustering, 'w'))
+
+    tf.logging.info('Clustering analysis done.')
+
+    '''
+    # sample few/all repeats of stimuli which are continous.
+    repeats = data_wn.get_repeats()
+    n_samples_max = 10
+    samples = np.random.randint(0, repeats.shape[0],
+                                np.minimum(n_samples_max, repeats.shape[0]))
+
+    n_start_times = 5
+    time_window = 15
+    resps_cont = np.zeros((n_start_times, n_samples_max,
+                           time_window, repeats.shape[-1]))
+    from IPython import embed; embed()
+
+    for istart in range(n_start_times):
+      start_tm = np.random.randint(repeats.shape[1] - time_window)
+      resps_cont[istart, :, :, :] = repeats[samples, start_tm:
+                                            start_tm+time_window, :]
+    resps_cont_2d = np.reshape(resps_cont, [-1, resps_cont.shape[-1]])
+    resps_cont_3d = np.expand_dims(resps_cont_2d, 2)
+    distances_cont_resp = analyse.get_pairwise_distances(met, resps_cont_3d)
+
+    n_components = 2
+    model = manifold.TSNE(n_components=n_components)
+    ts = model.fit_transform(distances_cont_resp)
+    tts = np.reshape(ts, [n_start_times, n_samples_max,
+                          time_window, n_components])
+
+    from IPython import embed; embed()
+
+    plt.figure()
+    for istart in [1]:  # range(n_start_times):
+      for isample in range(n_samples_max):
+        pts = tts[istart, isample, :, :]
+        plt.plot(pts[:, 0], pts[:, 1])
+
+    plt.show()
+    '''
+
+    # 5. Store the parameters of the score function.
+    score_params = met.get_parameters()
+    analysis_results.update({'score_params': score_params})
+    tf.logging.info('Got interesting parameters of score')
+
+    # 6. Retreival analysis on training data.
+    # Retrieve the nearest responses in training data for a probe test response.
+
+    # Load training data.
+#     data_wn_train = du.DataUtilsMetric(os.path.join(FLAGS.data_path,
+#                                                     FLAGS.data_train))
+#
+#     out_data = data_wn_train.get_all_responses(FLAGS.time_window)
+#     train_all_resp, train_stim_time = out_data
+#
+#     # Get a few test stimuli. Here we use all repreats of a few stimuli.
+#     n_stims = 100
+#     resp_all_trials, stim_id = data_wn.get_response_all_trials(n_stims,
+#                                                                FLAGS.time_window)
+#     k = 1000
+#     retrieved, retrieved_stim = analyse.topK_retrieval_probes(train_all_resp,
+#                                                               train_stim_time,
+#                                                               resp_all_trials,
+#                                                               k, met)
+#     retrieval_dict = {'probe': resp_all_trials, 'probe_stim_idx': stim_id,
+#                       'retrieved': retrieved,
+#                       'retrieved_stim_idx': retrieved_stim}
+#     analysis_results.update({'retrieval': retrieval_dict})
+#     tf.logging.info('Retrieved nearest points in training data'
+#                     ' for some probes in test data')
+
+    # TODO(bhaishahster) : Decode stimulus using retrieved responses.
+
+
+    # 7. Learn encoding model.
+    # Learn mapping from stimulus to response.
+
+    # from IPython import embed; embed()
+    '''
+    data_wn_train = du.DataUtilsMetric(os.path.join(FLAGS.data_path,
+                                                    'example_long_wn_2rep_'
+                                                    'ON_OFF_with_stim.mat'))
+
+    data_wn_test = du.DataUtilsMetric(os.path.join(FLAGS.data_path,
+                                                    'example_wn_30reps_ON_'
+                                                    'OFF_with_stimulus.mat'))
+    stimulus_test = data_wn_test.get_stimulus()
+    response_test = data_wn_test.get_repeats()
+
+    stimulus = data_wn_train.get_stimulus()
+    response = data_wn_train.get_repeats()
+    ttf = data_wn_train.ttf[::-1]
+    encoding_fcn = encoding_model.learn_encoding_model_ln
+
+     # Initialize ttf, RF using ttf and scale ttf to match firing rate
+    RF_np, ttf_np, model = encoding_fcn(sess, met, stimulus, response, ttf_in=ttf,
+                                 lr=0.1)
+    firing_rate_pred = sess.run(model.firing_rate,
+                                feed_dict={model.stimulus: stimulus_test})
+
+    initialize_all = {'RF': RF_np, 'ttf': ttf,
+                      'firing_rate_test': firing_rate_pred}
+
+    # Initialize ttf and do no other initializations
+    RF_np_noinit, ttf_np_noinit, model = encoding_fcn(sess,met, stimulus, response,
+                                               ttf_in=ttf,
+                                               initialize_RF_using_ttf=False,
+                                               scale_ttf=False, lr=0.1)
+    firing_rate_pred = sess.run(model.firing_rate,
+                                feed_dict={model.stimulus: stimulus_test})
+    initialize_only_ttf = {'RF': RF_np_noinit, 'ttf': ttf_np_noinit,
+                           'firing_rate_test': firing_rate_pred}
+
+    # Initialize ttf and do no other initializations
+    RF_np_noinit2, ttf_np_noinit2, model = encoding_fcn(sess, met, stimulus, response,
+                                                 ttf_in=None,
+                                                 initialize_RF_using_ttf=False,
+                                                 scale_ttf=False, lr=0.1)
+    firing_rate_pred = sess.run(model.firing_rate,
+                                feed_dict={model.stimulus: stimulus_test})
+    initialize_none = {'RF': RF_np_noinit2, 'ttf': ttf_np_noinit2,
+                       'firing_rate_test': firing_rate_pred}
+
+    encoding_models = {'Init_all': initialize_all,
+                       'Init_ttf': initialize_only_ttf,
+                       'Init_none': initialize_none,
+                       'responses_test': response_test}
+
+    analysis_results.update({'Encoding_models': encoding_models})
+    '''
+
+
+    # 8. Is similarity in images implicitly learnt in the metric ?
+    # Reconstruction done in colab notebook
+
+    '''
+    class StimulusMetric(object):
+      """Compute MSE between stimuli."""
+
+      def get_distance(self, in1, in2):
+        return np.sqrt(np.sum(np.sum((in1 - in2)**2, 2), 1))
+
+    # TODO(bhaishahster) : Filtering by time is remaining!
+    stimuli_met = StimulusMetric()
+
+    stim_distance, resp_distance, times, responses = analyse.compare_stimulus_score_similarity(data_wn, stimuli_met,
+                                                                            met)
+    compare_stim_mse_resp_met = {'stimulus_mse': stim_distance,
+                                 'response_metric': resp_distance,
+                                 'times': times,
+                                 'response_pairs': responses}
+    analysis_results.update({'perception': compare_stim_mse_resp_met})
+    '''
+
+    # 9. Retrieve nearest responses from ALL possible response patterns
+    # Retrieve the nearest responses in training data for a probe test response.
+
+    '''
+    import itertools
+    lst = list(map(list, itertools.product([0, 1], repeat=data_wn.n_cells)))
+    all_resp = np.array(lst)
+    all_resp = np.expand_dims(all_resp, 2)
+
+    # Get a few test stimuli. Here we use all repreats of a few stimuli.
+    n_stims = 100
+    probe_responses, stim_id = data_wn.get_response_all_trials(n_stims,
+                                                               FLAGS.time_window)
+    distances_corpus = analyse.compute_all_distances(all_resp, probe_responses,
+                                                              met)
+    retrieval_dict = {'probe': probe_responses, 'probe_stim_idx': stim_id,
+                      'corpus': all_resp,
+                      'distance_corpus': distances_corpus}
+
+    analysis_results.update({'retrieval_ALL_responses': retrieval_dict})
+    tf.logging.info('Distance of probe to ALL possible response patterns')
+    '''
+    # 10. Get embedding for all possible responses,
+    #       only if there are less than 15 cells
+
+    if data_wn.n_cells < 15:
+      import itertools
+      lst = list(map(list, itertools.product([0, 1], repeat=data_wn.n_cells)))
+      all_resp = np.expand_dims(np.array(lst), 2)  # use time_window of 1.
+      all_resp_embedding = met.get_embedding(all_resp)
+      analysis_results.update({'all_resp_embedding': all_resp_embedding})
+
+    
+    # save analysis in a pickle file
+    # from IPython import embed; embed()
+    pickle_file = (os.path.join(model_savepath, model_filename) + '_' +
+                   FLAGS.data_test +
+                   '_analysis.pkl')
+    pickle.dump(analysis_results, gfile.Open(pickle_file, 'w'))
+    # pickle.dump(analysis_results, file_io.FileIO(pickle_file, 'w'))
+    tf.logging.info('File: ' + pickle_file)
+    tf.logging.info('Analysis results saved')
+    print('File: ' + pickle_file)
+
+if __name__ == '__main__':
+  app.run(main)
